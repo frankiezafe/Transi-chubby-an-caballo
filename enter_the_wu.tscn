@@ -1,0 +1,399 @@
+[gd_scene load_steps=19 format=1]
+
+[ext_resource path="res://textures/bg.tex" type="Texture" id=1]
+[ext_resource path="res://scripts/enter_the_wu.gd" type="Script" id=2]
+[ext_resource path="res://textures/bg.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Fyodor-BoldCondensed-40.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://fonts/Fyodor-Bold-14.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://models/shubby.msh" type="Mesh" id=6]
+[ext_resource path="res://models/le_transi.scn" type="PackedScene" id=7]
+[ext_resource path="res://models/caballo_lowpoly/CABALLO_low_poly.msh" type="Mesh" id=8]
+[ext_resource path="res://sounds/132252__robinhood76__02940-insane-women-laughter.smp" type="Sample" id=9]
+[ext_resource path="res://sounds/198834__genghis-attenborough__incidental-guitar-16.smp" type="Sample" id=10]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0 )
+light_color = Color( 0, 0, 0, 1 )
+dark_color = Color( 0, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.6, 0.6, 0.6, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = false
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="Environment" id=6]
+
+ambient_light/enabled = false
+ambient_light/color = Color( 0, 0, 0, 1 )
+ambient_light/energy = 1.0
+fxaa/enabled = false
+background/mode = 2
+background/color = Color( 0.429688, 0, 0, 1 )
+background/energy = 1.0
+background/scale = 1.0
+background/glow = 0.0
+background/canvas_max_layer = null
+glow/enabled = false
+glow/blur_passes = 1
+glow/blur_scale = 1
+glow/blur_strength = 1
+glow/blur_blend_mode = null
+glow/bloom = 0.0
+glow/bloom_treshold = 0.5
+dof_blur/enabled = false
+dof_blur/blur_passes = 1
+dof_blur/begin = 100.0
+dof_blur/range = 10.0
+hdr/enabled = false
+hdr/tonemapper = 0
+hdr/exposure = 0.4
+hdr/white = 1.0
+hdr/glow_treshold = 0.95
+hdr/glow_scale = 0.2
+hdr/min_luminance = 0.4
+hdr/max_luminance = 8.0
+hdr/exposure_adj_speed = 0.5
+fog/enabled = false
+fog/begin = 100.0
+fog/begin_color = Color( 0, 0, 0, 1 )
+fog/end_color = Color( 0, 0, 0, 1 )
+fog/attenuation = 1.0
+fog/bg = true
+bcs/enabled = false
+bcs/brightness = 1.0
+bcs/contrast = 1.0
+bcs/saturation = 1.0
+srgb/enabled = false
+
+[sub_resource type="FixedMaterial" id=7]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 1, 1, 1, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 2
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="SampleLibrary" id=8]
+
+samples/132252__robinhood76__02940-insane-women-laughter = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 9 )
+}
+samples/198834__genghis-attenborough__incidental-guitar-16 = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 10 )
+}
+
+[node name="root" type="Sprite"]
+
+texture = ExtResource( 1 )
+modulate = Color( 1, 0, 0, 1 )
+region = true
+script/script = ExtResource( 2 )
+
+[node name="btn_bg" type="Sprite" parent="."]
+
+texture = ExtResource( 3 )
+centered = false
+
+[node name="title-bg" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 237.0
+margin/bottom = 39.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+custom_constants/shadow_offset_y = 2
+text = "Transi, chubby & caballo"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="title" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 34.0
+margin/top = 25.0
+margin/right = 271.0
+margin/bottom = 64.0
+custom_fonts/font = ExtResource( 4 )
+text = "Transi, chubby & caballo"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="btn_go" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 461.0
+margin/top = 102.0
+margin/right = 511.0
+margin/bottom = 150.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "GO"
+flat = false
+
+[node name="btn_credits" type="Button" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 462.0
+margin/top = 242.0
+margin/right = 512.0
+margin/bottom = 290.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 5 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "about"
+flat = false
+
+[node name="chub" type="Spatial" parent="."]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="chub_bg" type="WorldEnvironment" parent="chub"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = SubResource( 6 )
+
+[node name="chub_cam" type="Camera" parent="chub"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.32334 )
+projection = 0
+fov = 65.0
+near = 0.1
+far = 100.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+
+[node name="chub_light" type="DirectionalLight" parent="chub"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.0693765, -0.817575, 0.571628, -0.0404876, 0.570229, 0.820487, -0.996769, -0.0800664, 0.00645891, 2.26671, 0.955397, 1.63186 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 0, 0.859375, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
+shadow/max_distance = 0.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="chub" type="Spatial" parent="chub"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -0.269934 )
+
+[node name="chub-model" type="MeshInstance" parent="chub/chub"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.690424, 0, 0, 0, 0.690424, 0, 0, 0, 0.690424, -0.124615, -4.13798, -0.836319 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 6 )
+mesh/skeleton = NodePath("..")
+material/0 = SubResource( 7 )
+
+[node name="le_transi" parent="chub/chub" instance=ExtResource( 7 )]
+
+transform/local = Transform( -0.346499, 0, -1.12904e-07, 0, 0.346499, 0, 1.12904e-07, 0, -0.346499, -0.124615, -4.23422, 0.713197 )
+
+[node name="caballo" type="MeshInstance" parent="chub/chub/le_transi"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.729047, -0.364266, -0.0856141, 0.36178, 0.734057, -0.0424846, 0.0955757, -1.78039e-07, 0.813876, 5.48241, 20.9911, 1.28399 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 8 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+
+[node name="ambient" type="SamplePlayer" parent="."]
+
+config/polyphony = 2
+config/samples = SubResource( 8 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[connection signal="mouse_enter" from="btn_go" to="." method="_on_btn_go_mouse_enter"]
+
+[connection signal="mouse_enter" from="btn_go" to="." method="_on_btn_hover"]
+
+[connection signal="mouse_exit" from="btn_go" to="." method="_on_btn_leave"]
+
+[connection signal="pressed" from="btn_go" to="." method="_on_btn_go_pressed"]
+
+[connection signal="mouse_enter" from="btn_credits" to="." method="_on_btn_credits_mouse_enter"]
+
+[connection signal="mouse_enter" from="btn_credits" to="." method="_on_btn_hover"]
+
+[connection signal="mouse_exit" from="btn_credits" to="." method="_on_btn_leave"]
+
+[connection signal="pressed" from="btn_credits" to="." method="_on_btn_credits_pressed"]
+
+

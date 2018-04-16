@@ -1,0 +1,461 @@
+[gd_scene load_steps=23 format=1]
+
+[ext_resource path="res://scripts/Root.gd" type="Script" id=1]
+[ext_resource path="res://scripts/cam.gd" type="Script" id=2]
+[ext_resource path="res://models/shubby.msh" type="Mesh" id=3]
+[ext_resource path="res://scripts/ChubbyBoom.gd" type="Script" id=4]
+[ext_resource path="res://models/le_transi.scn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/le_transi.gd" type="Script" id=6]
+[ext_resource path="res://models/le_transi.tres" type="Animation" id=7]
+[ext_resource path="res://models/caballo_lowpoly/CABALLO_low_poly.msh" type="Mesh" id=8]
+[ext_resource path="res://models/capsule.msh" type="Mesh" id=9]
+[ext_resource path="res://scripts/Rotor.gd" type="Script" id=10]
+[ext_resource path="res://textures/7733-normal.jpg" type="Texture" id=11]
+[ext_resource path="res://textures/bg.tex" type="Texture" id=12]
+[ext_resource path="res://fonts/Fyodor-Bold.fnt" type="BitmapFont" id=13]
+[ext_resource path="res://sounds/329077__vomitdog__wicked_fzmix.smp" type="Sample" id=14]
+
+[sub_resource type="Environment" id=1]
+
+ambient_light/enabled = true
+ambient_light/color = Color( 0, 0, 0, 1 )
+ambient_light/energy = 0.1
+fxaa/enabled = false
+background/mode = 0
+background/color = Color( 1, 0.75, 0, 1 )
+background/energy = 1.0
+background/scale = 1.0
+background/glow = 0.0
+background/canvas_max_layer = null
+glow/enabled = false
+glow/blur_passes = 1
+glow/blur_scale = 1
+glow/blur_strength = 1
+glow/blur_blend_mode = null
+glow/bloom = 0.0
+glow/bloom_treshold = 0.5
+dof_blur/enabled = false
+dof_blur/blur_passes = 1
+dof_blur/begin = 100.0
+dof_blur/range = 10.0
+hdr/enabled = false
+hdr/tonemapper = 0
+hdr/exposure = 0.4
+hdr/white = 1.0
+hdr/glow_treshold = 0.95
+hdr/glow_scale = 0.2
+hdr/min_luminance = 0.4
+hdr/max_luminance = 8.0
+hdr/exposure_adj_speed = 0.5
+fog/enabled = false
+fog/begin = 100.0
+fog/begin_color = Color( 0, 0, 0, 1 )
+fog/end_color = Color( 0, 0, 0, 1 )
+fog/attenuation = 1.0
+fog/bg = true
+bcs/enabled = false
+bcs/brightness = 1.0
+bcs/contrast = 1.0
+bcs/saturation = 1.0
+srgb/enabled = false
+
+[sub_resource type="FixedMaterial" id=2]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 1.875
+fixed_flags/use_alpha = true
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 1, 1, 1, 0.0109412 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 1, 1, 1, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="FixedMaterial" id=3]
+
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 1, 0, 0, 1 )
+params/specular = Color( 0, 0.953125, 1, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 3
+params/shader_param = 0.5
+params/glow = 3.0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal = ExtResource( 11 )
+textures/normal_tc = 0
+textures/shade_param_tc = 0
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="SampleLibrary" id=7]
+
+samples/329077__vomitdog__wicked = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 14 )
+}
+
+[sub_resource type="Theme" id=8]
+
+default_font = ExtResource( 13 )
+
+[node name="Spatial" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+script/script = ExtResource( 1 )
+file_prefix = "transichubbyandcaballo"
+file_tag = null
+add_watermark = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.3572, 0, 0, 0, 0.3572, 0, 0, 0, 0.3572, 0, 0, 0 )
+environment = SubResource( 1 )
+
+[node name="cam" type="Camera" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.789306, 0, 0.614, 0, 1, 0, -0.614, 0, 0.789306, 6.14561, 0.850267, 5.03779 )
+projection = 0
+fov = 40.0
+near = 0.1
+far = 1000.0
+keep_aspect = 1
+current = false
+visible_layers = 1048575
+environment = null
+h_offset = 0.0
+v_offset = 0.0
+script/script = ExtResource( 2 )
+
+[node name="dlight" type="DirectionalLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.790222, 0.321614, 0.521645, -0.612821, 0.414715, 0.672653, 7.45058e-09, -0.85122, 0.524809, 2.55872, 5.27273, 0.880605 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 2.32
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
+shadow/max_distance = 0.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
+
+[node name="objs" type="Spatial" parent="."]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="chubby-group" type="Spatial" parent="objs"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="chubby-girl" type="MeshInstance" parent="objs/chubby-group"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.353834, 0, 0, 0, 0.353834, 0, 0, 0, 0.353834, -3.03424, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 3 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+script/script = ExtResource( 4 )
+
+[node name="chubby-girl1" type="MeshInstance" parent="objs/chubby-group"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( -0.353834, 1.15294e-07, 0, -1.15294e-07, -0.353834, 0, 0, 0, 0.353834, -3.03424, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 3 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+script/script = ExtResource( 4 )
+
+[node name="le_transi" parent="objs/chubby-group" instance=ExtResource( 5 )]
+
+transform/local = Transform( 0.254072, 0, 0, 0, 0.254072, 0, 0, 0, 0.254072, -3.05835, -0.048115, 0 )
+script/script = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="objs/chubby-group"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("../le_transi")
+anims/le_transi = ExtResource( 7 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="caballo" type="MeshInstance" parent="objs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.283243, 0, 0, 0, 0.283243, 0, 0, 0, 0.283243, -13.8268, 1.96637, -0.367921 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 8 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+
+[node name="ship" type="MeshInstance" parent="objs"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 41.6478, -4.07124e-05, -4.11851e-06, 6.58347e-05, 41.6477, 2.5511e-05, 2.94961e-05, 3.82664e-05, 41.6477, 4.6053, -0.175043, -3.9771 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 9 )
+mesh/skeleton = NodePath("..")
+material/0 = SubResource( 2 )
+script/script = ExtResource( 10 )
+
+[node name="cubo" type="Spatial" parent="objs"]
+
+editor/display_folded = true
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="cubo_mesh" type="TestCube" parent="objs/cubo"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.737849, 0.674966, 5.96046e-08, -0.614288, 0.671518, -0.414385, -0.279696, 0.305754, 0.910102, 0, 0, -1.71392 )
+layers = 1
+geometry/visible = true
+geometry/material_override = SubResource( 3 )
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+
+[node name="overlay" type="Sprite" parent="."]
+
+editor/display_folded = true
+
+[node name="bg" type="Sprite" parent="overlay"]
+
+texture = ExtResource( 12 )
+
+[node name="message" type="Button" parent="overlay"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 517.0
+margin/top = 199.0
+margin/right = 871.0
+margin/bottom = 220.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = ExtResource( 13 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "yo"
+flat = false
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 7 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="save_popup" type="FileDialog" parent="."]
+
+visibility/opacity = 0.8
+anchor/left = 3
+anchor/top = 3
+rect/rotation = 5.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = SubResource( 8 )
+margin/left = 480.0
+margin/top = 269.0
+margin/right = 432.0
+margin/bottom = 331.0
+popup/exclusive = true
+window/title = "Save a File"
+dialog/text = "Where d'want to save ur screenshot?"
+dialog/hide_on_ok = true
+mode = 4
+access = 2
+filters = StringArray(  )
+show_hidden_files = false
+
+[connection signal="mouse_enter" from="overlay/message" to="." method="_on_message_mouse_enter"]
+
+[connection signal="pressed" from="overlay/message" to="." method="_on_message_pressed"]
+
+[connection signal="file_selected" from="save_popup" to="." method="_on_save_popup_file_selected"]
+
+[connection signal="hide" from="save_popup" to="." method="_on_save_popup_hide"]
+
+
